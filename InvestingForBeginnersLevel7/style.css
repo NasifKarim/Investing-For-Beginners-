@@ -1,0 +1,262 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100vw;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-block-start: .4em;
+    margin-block-end: .4em;
+}
+
+header {
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    width: 50vw;
+}
+
+#crossword-grid {
+    display: grid;
+    grid-template-columns: repeat(11, 50px);
+    grid-template-rows: repeat(14, 50px); 
+    gap: 2px; 
+}
+
+/* General Modal Styling */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+/* Modal Content Styling */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+/* Close Button Styling */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.grid-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 80vw; 
+    flex-direction: column;
+}
+
+.crossword-grid {
+    display: grid;
+    grid-template-columns: repeat(15, minmax(4vw, 6vw)); 
+    grid-template-rows: repeat(15, minmax(4vw, 6vw)); 
+    gap: 0.1em;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    background-color: #fff;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.cell.empty {
+    background-color: white; 
+    border: none; 
+}
+
+.cell input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-align: center;
+    font-size: 1.5vw;
+    background: none;
+    outline: none;
+}
+
+.clue-number {
+    position: absolute;
+    top: 0.1em;
+    left: 0.1em;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.clues-wrapper {
+    max-width: 30vw;
+    max-height: 50vh;
+    margin-bottom: 10px;
+}
+
+.clues div {
+    margin-bottom: 1em;
+}
+
+.controls {
+    margin-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    justify-content: center;
+}
+
+button {
+    padding: 0.5em 1.5em;
+    font-size: 0.85em; 
+    font-weight: bold;
+    background-color: blanchedalmond;
+    color: #000;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #EED8AE; 
+}
+
+.correct-answers {
+    background-color: springgreen;
+    color: black;
+}
+
+.incorrect-answers {
+    background-color: red;
+    color: black;
+}
+
+.correct-cell {
+    background-color: springgreen;
+}
+
+.incorrect-cell {
+    background-color: red;
+    color: white;
+}
+
+.correct {
+    color: black;
+}
+
+.incorrect {
+    color: white;
+}
+
+.reset-button {
+    background-color: honeydew;
+}
+
+.submit-button {
+    background-color: palegreen;
+}
+
+@media (max-width: 480px) {
+    #crossword-grid,
+    .crossword-grid {
+        grid-template-columns: repeat(11, 8vw); 
+        grid-template-rows: repeat(14, 8vw);
+        max-width: 100%; 
+    }
+
+    .cell input {
+        font-size: 4vw; 
+    }
+
+    h2 {
+        font-size: 2em; 
+    }
+
+    .grid-wrapper {
+        max-width: 100vw; 
+    }
+
+    .clue-number {
+        font-size: 2.5vw; 
+        font-weight: bold;
+    }
+
+    .clues-wrapper {
+        max-width: 80vw; 
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

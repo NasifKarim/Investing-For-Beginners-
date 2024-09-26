@@ -1,0 +1,202 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-block-start: 0.4em;
+    margin-block-end: 0.4em;
+}
+
+p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 1em;
+}
+
+.main-image {
+    width: 35vw;
+}
+
+button {
+    font-size: 1em;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.button-text-default {
+    background-color: palegreen;
+    color: #333;
+}
+
+.button-text-default:hover {
+    background-color: #a8e3a8;
+}
+
+.game-container {
+    border-radius: 1.6em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 0 2.5vw 2.5vw 2.5vw;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.balance-display {
+    margin-bottom: 1em;
+}
+
+.slide {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4em;
+    box-sizing: border-box;
+}
+
+.slide.active {
+    display: flex;
+}
+
+.investment-options {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.investment-options label {
+    font-size: 1em;
+    margin-right: 0.5em;
+}
+
+.investment-options input {
+    font-size: 1em;
+    padding: 0.25em;
+    border-radius: 0.5em;
+    border: 1px solid #ccc;
+    width: 80px;
+    text-align: center;
+}
+
+.company-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+    padding: 2vw 0;
+}
+
+.company-card {
+    background-color: #f0f0f0;
+    padding: 1.5em;
+    border-radius: 1em;
+    width: 80%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0.13em 0.3em rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.company-card:hover {
+    background-color: #e2e6ea;
+    transform: scale(1.03);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 4em;
+    border-radius: 0.63em;
+    width: 90%;
+    max-width: 30em;
+    text-align: center;
+}
+
+.close-modal {
+    position: absolute;
+    right: 5%;
+    top: 2.5%;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal.active {
+    display: flex;
+}
+
+
+@media only screen and (max-width: 37.5em) {
+    h2 {
+        font-size: 1.3em;
+    }
+
+    .main-image {
+        width: 80vw; 
+    }
+
+    .game-container {
+        padding: 1.5em 1em; 
+    }
+p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 1em;
+}
+
+    .slide {
+        padding: 1em; 
+    }
+
+    .investment-options {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .company-card {
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+        padding: 1em;
+    }
+}

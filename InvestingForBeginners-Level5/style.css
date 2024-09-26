@@ -1,0 +1,333 @@
+:root {
+    --main-color: #ebebe8;
+    --secondary-color: yellow;
+    --accent-color: white;
+    --text-color: #333;
+    --border-color: #ccc;
+    --hover-color: #555;
+    --glow-color: rgba(0, 255, 0, 0.6);
+    --stocks-color: #FF6384; 
+    --bonds-color: #36A2EB;  
+    --etfs-color: #FFCE56;   
+    --cash-color: #4BC0C0; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: var(--accent-color);
+}
+
+h2{
+    font-size: 2.5em;
+    margin-block-start: .4em;
+    margin-block-end: .4em;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--main-color);
+    color: #007500;     
+}
+
+header p {
+    color: black;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.main-footer {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    border-bottom: 0.1rem solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.main-content, .bonus-contentn {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    background-color: var(--accent-color);
+}
+
+.asset-pool, .info-panel {
+    border: 0.05rem solid var(--border-color);
+    padding: 0.5rem;
+    margin: 0.5rem;
+    background-color: var(--accent-color);
+    flex: 1 1 calc(40% - 1rem);
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+}
+
+.asset-pool:hover, .info-panel:hover {
+    box-shadow: 0 0 0.5rem var(--glow-color);
+}
+
+.asset {
+    border: 0.05rem solid var(--text-color);
+    padding: 0.5rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: var(--accent-color);
+    border-radius: 1rem;
+    width: 90%;
+    text-align: center;
+}
+
+.asset:hover {
+    filter: brightness(1.1);
+    cursor: pointer;
+}
+
+.asset[data-type="stocks"] {
+    background-color: var(--stocks-color);
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.asset[data-type="bonds"] {
+    background-color: var(--bonds-color);
+    color: var (--accent-color);
+    font-weight: bold;
+}
+
+.asset[data-type="etfs"] {
+    background-color: var(--etfs-color);
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.asset[data-type="cash"] {
+    background-color: var(--cash-color);
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.feedback, .portfolio-chart {
+    margin-top: 0.5rem;
+    color: var(--text-color);
+}
+
+.portfolio-chart {
+    width: 50%;
+}
+
+.reset-btn, .next-btn, .back-btn {
+    padding: 0.8rem 1.2rem;  
+    background-color: #333333; 
+    color: var(--accent-color);
+    border: none;
+    border-radius: 1rem;  
+    cursor: pointer;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3); 
+    transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    font-size: 0.8rem;  
+    text-transform: uppercase; 
+    letter-spacing: 0.1rem; 
+    width: 48%;  
+    max-width: 12rem; 
+    position: relative;  
+    overflow: hidden;  
+}
+
+.reset-btn:hover, .next-btn:hover, .back-btn:hover {
+    background-color: #007500;  
+    box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.4);  
+    transform: translateY(-0.2rem);  
+}
+
+.reset-btn::before, .next-btn::before, .back-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);  
+    transform: rotate(45deg);  
+    transition: left 0.5s ease-in-out;  
+}
+
+.reset-btn:hover::before, .next-btn:hover::before, .back-btn:hover::before {
+    left: 100%;  
+}
+
+.bonus {
+    padding: 1rem;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.bonus h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.bonus p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.bonus a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.bonus a:hover {
+    text-decoration: underline;
+}
+
+.quiz {
+    border: 0.05rem solid #ddd;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    text-align: left;
+}
+
+.quiz h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #007500;
+}
+
+.radio-item {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 0.5rem;
+}
+
+.quiz input[type="radio"] {
+    margin-right: 0.5rem; 
+}
+
+.quiz label {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.quiz-submit {
+    padding: 0.5rem 1rem;
+    background-color: #007500;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.quiz-submit:hover {
+    background-color: #005500;
+    transform: translateY(-0.2rem);
+}
+
+.quiz-feedback {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.quiz-feedback.correct {
+    color: green;
+}
+
+.quiz-feedback.incorrect {
+    color: red;
+}
+
+@media (max-width: 48em) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .asset-pool, .info-panel {
+        width: 100%;
+        margin: 1rem 0;
+        padding: 1rem;
+    }
+
+    .reset-btn, .next-btn, .back-btn {
+        width: 100%;  
+        margin-bottom: 0.5rem;
+    }
+
+    .quiz {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 30em) {
+    .quiz h3 {
+        font-size: 1rem;
+    }
+
+    .quiz label {
+        font-size: 0.9rem;
+    }
+
+    .quiz-submit {
+        padding: 0.8rem 1rem;
+        font-size: 0.7rem;
+    }
+
+    .quiz-feedback {
+        font-size: 0.9rem;
+    }
+
+    .reset-btn, .next-btn, .back-btn {
+        padding: 0.8rem 1rem;
+        font-size: 0.7rem;
+    }
+
+    .portfolio-chart {
+        width: 12rem; 
+        height: 12rem; 
+        margin: 1rem auto;
+    }
+}
+
+@media (min-width: 75em) {
+    main {
+        max-width: 70%;
+        margin: 0 auto;
+    }
+
+    header, footer {
+        padding: 0.5rem 1rem;
+    }
+
+    .asset-pool, .info-panel {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .bonus, .quiz {
+        padding: 1.5rem 2rem;
+        margin: 2rem 0;
+    }
+}

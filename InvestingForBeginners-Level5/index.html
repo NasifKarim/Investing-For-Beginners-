@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Mini-Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h2>Mini-Portfolio Builder</h2>
+        <p>Click on each asset to build your diverse portfolio!</p>
+    </header>
+    <main class="main-content">
+        <aside class="asset-pool">
+            <h3>Asset Pool</h3>
+            <div class="asset" data-type="stocks" data-value="10000">Stocks</div>
+            <div class="asset" data-type="bonds" data-value="5000">Bonds</div>
+            <div class="asset" data-type="etfs" data-value="7000">ETFs</div>
+            <div class="asset" data-type="cash" data-value="2000">Cash</div>
+            <h3>Asset Information</h3>
+            <p class="asset-info">Click on an asset to see more information.</p>
+        </aside>
+        <aside class="info-panel">
+            <div class="feedback">
+                <p><strong>Total Value:</strong> $<span class="total-value">0</span></p>
+                <p><strong>Balance:</strong> <span class="balance">0% Stocks, 0% Bonds, 0% ETFs, 0% Cash</span></p>
+                <p><strong>Diversification Score:</strong> <span class="diversification-score">Poor</span></p>
+            </div>
+            <svg class="portfolio-chart" viewBox="0 0 32 32"></svg>
+            <h3>Tips</h3>
+            <p class="tips">Build a diversified portfolio to minimize risk.</p>
+        </aside>
+    </main>
+
+    <main class="bonus-content" style="display: none;">
+        <section class="bonus">
+            <h3>Bonus</h3>
+            <p>Want to learn more about investing and stay updated on financial news? Check out <a href="https://finance.yahoo.com" target="_blank" rel="noopener noreferrer">Yahoo Finance</a> for the latest market trends and investment tips!</p>
+            <div class="quiz">
+                <h4>Quiz</h4>
+                <p>What was the year-to-date return of the S&P 500 from August 8th, 2023 to August 8th, 2024?</p>
+                <div class="radio-item">
+                    <input type="radio" id="option1" name="quiz" value="17.23%">
+                    <label for="option1">17.23%</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" id="option2" name="quiz" value="17.63%">
+                    <label for="option2">17.63%</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" id="option3" name="quiz" value="18.34%">
+                    <label for="option3">18.34%</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" id="option4" name="quiz" value="19.27%">
+                    <label for="option4">19.27%</label>
+                </div>
+                <button class="quiz-submit">Submit</button>
+                <p class="quiz-feedback"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <button class="reset-btn">Reset</button>
+        <button class="next-btn">Next</button>
+    </footer>
+
+    <footer class="bonus-footer" style="display: none;">
+        <button class="back-btn">Back</button>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

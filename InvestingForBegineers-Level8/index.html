@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyFiLi Savings Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="slide active">
+            <h2>Welcome to MyFiLi Savings Challenge</h2>
+            <img src="https://www.myfili.com/wp-content/uploads/2024/08/MyFili-Savings-Challenge.jpg" class="main-image">
+            <p>Your goal is to grow your savings by making smart investment choices.</p>
+            <button class="button-text-default start-button">Start</button>
+        </div>
+            
+        <div class="slide hidden">
+            <h2>Choose a Company to Invest In</h2>
+            <p>"Pick the best company to invest in by weighing its strengths and risks, decide how much and how long to invest, and try to maximize your earnings in 10 rounds! </p>
+            <div class="balance-display">
+                <strong>Current Balance:</strong> $<span id="balance-amount">1000</span>
+            </div>
+            <div class="investment-options">
+                <label for="investment-amount">Investment Amount:</label>
+                <input type="number" id="investment-amount" class="investment-amount" min="100" max="1000" value="1000">
+                <label for="investment-duration">Investment Duration (years):</label>
+                <input type="number" id="investment-duration" class="investment-duration" min="1" max="5" value="1">
+            </div>
+            <div class="company-list"></div>
+            <button class="button-text-default next-button hidden">Next</button>
+        </div>
+
+        <div class="slide hidden">
+            <h2>Unexpected Expenses</h2>
+            <p>An unexpected expense has occurred, such as a car repair or medical bill. How much will you withdraw from your savings?</p>
+            <div class="expense-options">
+                <label for="withdraw-amount">Amount to Withdraw:</label>
+                <input type="number" id="withdraw-amount" class="withdraw-amount" min="0" max="1000" value="100">
+            </div>
+            <button class="button-text-default next-button hidden">Next</button>
+        </div>
+
+        <div class="modal hidden">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Investment Outcome</h2>
+                <p class="congrats-message"></p>
+                <button class="button-text-default reset-button">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

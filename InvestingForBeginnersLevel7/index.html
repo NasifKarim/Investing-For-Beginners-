@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Crossword Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Crossword Puzzle</h2>
+            <div class="info">
+                <div id="score">Score: 0</div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="grid-wrapper">
+                <div class="crossword-grid" id="crossword-grid"></div>
+                <div class="clues-wrapper">
+                    <div class="controls">
+                        <button id="solve-puzzle">Solve Puzzle</button>
+                        <button id="show-hint">Show Hint</button>
+                        <button id="show-clues">Show Clues</button>
+                        <button id="restart-game">Restart</button>
+                        <button id="toggle-music">Play Music</button>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+    </div>
+    <audio id="background-music" src="https://www.myfili.com/wp-content/uploads/2024/08/game-music.wav" loop></audio>
+    <audio id="congrats-music" src="https://www.myfili.com/wp-content/uploads/2024/08/MatchCardCongrats.wav"></audio>
+
+    <div id="clues-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Across</h2>
+            <div id="popup-across-clues"></div>
+            <h2>Down</h2>
+            <div id="popup-down-clues"></div>
+        </div>
+    </div>
+
+    <!-- Modal for Congratulations -->
+    <div id="congratulations-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Congratulations!</h2>
+            <p>You've completed the crossword puzzle!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
